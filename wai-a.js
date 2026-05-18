@@ -212,12 +212,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         if (bestByMatch && (bestByMatch.matches > 0 || bestByMatch.substringMatch > 0)) {
-            appendMessage('AI', `[${bestByMatch.datasetName}] ${bestByMatch.value}`);
+            appendMessage('AI', bestByMatch.value);
             return;
         }
 
         if (bestByDistance && bestByDistance.distance <= Math.max(3, Math.floor(Math.max(normalized.length, bestByDistance.keyTokensLength) * 0.3))) {
-            appendMessage('AI', `[${bestByDistance.datasetName}] ${bestByDistance.value}`);
+            appendMessage('AI', bestByDistance.value);
             return;
         }
 
